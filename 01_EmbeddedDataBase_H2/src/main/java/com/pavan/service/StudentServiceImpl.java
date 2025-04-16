@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.pavan.dao.StudentDao;
+import com.pavan.exeception.StudentRecordNotFoundException;
 import com.pavan.model.Student;
 
 public class StudentServiceImpl implements IStudentService {
@@ -26,13 +27,14 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public Student findById(Integer id) {
-		// TODO Auto-generated method stub
+		Student student = dao.findById(id).orElseThrow(()-> new StudentRecordNotFoundException("Student Record Not found"));
 		return null;
 	}
 
 	@Override
 	public String updateStudent(Student student) {
-		// TODO Auto-generated method stub
+		dao.findby
+		
 		return null;
 	}
 
