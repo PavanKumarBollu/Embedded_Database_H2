@@ -21,8 +21,7 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public List<Student> findAllStudents() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll();
 	}
 
 	@Override
