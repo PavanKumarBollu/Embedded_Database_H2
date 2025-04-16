@@ -8,15 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pavan.model.Student;
+import com.pavan.service.IStudentService;
 
 @RestController
 @RequestMapping(value="/student")
 public class StudentRestController {
 	
+	private IStudentService service;
+	
+	
 	@PostMapping(value="/register")
 	public ResponseEntity<String> saveStudent(@RequestBody Student student)
 	{
-		return new ResponseEntity<String>("" ,HttpStatus.OK);
+		String std = service.saveStudent(student);
+		return new ResponseEntity<String>(std ,HttpStatus.OK);
 	}
 
 }
