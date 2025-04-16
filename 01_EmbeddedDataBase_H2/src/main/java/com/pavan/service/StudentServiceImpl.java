@@ -2,13 +2,17 @@ package com.pavan.service;
 
 import java.util.List;
 
+import com.pavan.dao.StudentDao;
 import com.pavan.model.Student;
 
 public class StudentServiceImpl implements IStudentService {
 
+	private StudentDao dao;
+	
+	
 	@Override
 	public String saveStudent(Student student) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
