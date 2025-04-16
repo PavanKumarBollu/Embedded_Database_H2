@@ -28,14 +28,14 @@ public class StudentServiceImpl implements IStudentService {
 	@Override
 	public Student findById(Integer id) {
 		Student student = dao.findById(id).orElseThrow(()-> new StudentRecordNotFoundException("Student Record Not found"));
-		return null;
+		return student;
 	}
 
 	@Override
 	public String updateStudent(Student student) {
-		dao.findby
+		Student dbStu = dao.save(student);
 		
-		return null;
+		return "Student record updated with the id :: " + dbStu.getSid();
 	}
 
 	@Override
