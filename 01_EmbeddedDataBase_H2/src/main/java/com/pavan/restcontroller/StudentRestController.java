@@ -1,5 +1,8 @@
 package com.pavan.restcontroller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +17,7 @@ import com.pavan.service.IStudentService;
 @RequestMapping(value="/student")
 public class StudentRestController {
 	
+	@Autowired
 	private IStudentService service;
 	
 	
@@ -22,6 +26,12 @@ public class StudentRestController {
 	{
 		String std = service.saveStudent(student);
 		return new ResponseEntity<String>(std ,HttpStatus.OK);
+	}
+	
+	public ResponseEntity<?> getAllStudents()
+	{
+		List<Student> students = service.findAllStudents();
+		return new ResponseEntity<List<Student>>(students, HttpStatus.OK);
 	}
 
 }
