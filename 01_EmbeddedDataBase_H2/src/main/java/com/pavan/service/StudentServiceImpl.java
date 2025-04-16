@@ -40,8 +40,12 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public String deleteById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		Student student = dao.findById(id).orElseThrow(()-> new StudentRecordNotFoundException("Student Record Not found"));
+		
+		dao.delete(student);
+		
+		
+		return "Student Record Deleted Successfully";
 	}
 
 }
