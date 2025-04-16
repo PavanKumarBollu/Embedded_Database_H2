@@ -6,5 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value="/student")
 public class StudentRestController {
+	
+	public ResponseEntity<String> saveStudent()
+	{
+		return new ResponseEntity<String>();
+	}
 
 }
+ 
