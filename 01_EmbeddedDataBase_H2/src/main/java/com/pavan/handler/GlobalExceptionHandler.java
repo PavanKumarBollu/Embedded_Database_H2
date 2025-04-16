@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<ErrorDetails> globalException(Exception e) {
 		return new ResponseEntity<ErrorDetails>(
-				new ErrorDetails(LocalDateTime.now(), e.getMessage(), "Record Not found"), HttpStatus.OK);
+				new ErrorDetails(LocalDateTime.now(), e.getMessage(), "Internal Server Error "), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
 	
