@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/student")
 public class StudentRestController {
 	
-	public ResponseEntity<String> saveStudent()
+	@PostMapping(value="/register")
+	public ResponseEntity<String> saveStudent(@RequestBody Student student)
 	{
 		return new ResponseEntity<String>("" ,HttpStatus.OK);
 	}
