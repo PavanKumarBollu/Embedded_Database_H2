@@ -18,5 +18,12 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<ErrorDetails>(
 				new ErrorDetails(LocalDateTime.now(), srnfe.getMessage(), "Record Not found"), HttpStatus.OK);
 	}
+	public ResponseEntity<ErrorDetails> globalException(Exception srnfe) {
+		return new ResponseEntity<ErrorDetails>(
+				new ErrorDetails(LocalDateTime.now(), srnfe.getMessage(), "Record Not found"), HttpStatus.OK);
+	}
+	
+	
+	
 
 }
