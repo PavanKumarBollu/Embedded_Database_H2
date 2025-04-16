@@ -1,5 +1,9 @@
 package com.pavan.service;
 
+import java.util.List;
+
+import com.pavan.model.Student;
+
 public interface IStudentService {
 
 	public String saveStudent(Student student);
