@@ -15,8 +15,8 @@ public class StudentServiceImpl implements IStudentService {
 	
 	@Override
 	public String saveStudent(Student student) {
-		
-		return null;
+		Student save = dao.save(student);
+		return "Student Registed With the id " + save.getSid();
 	}
 
 	@Override
